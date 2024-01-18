@@ -1,31 +1,184 @@
-A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
+[![Chulapa live
+preview](https://dieghernan.github.io/chulapa/assets/img/site/banner.png "live preview")](https://dieghernan.github.io/chulapa/)
 
-I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.
+![GitHub release (latest by
+date)](https://img.shields.io/github/v/release/dieghernan/chulapa) [![Gem
+Version](https://badge.fury.io/rb/chulapa-jekyll.svg)](https://rubygems.org/gems/chulapa-jekyll)
+![GitHub](https://img.shields.io/github/license/dieghernan/chulapa)
+![Jekyll](https://img.shields.io/badge/jekyll-3.8.7-blue)
+![Bootstrap](https://img.shields.io/badge/bootstrap-4.5.0-blue)
+![Fontawesome](https://img.shields.io/badge/fontawesome-6.x-blue)
+![Algolia](https://img.shields.io/badge/algolia-4.x-blue)
+![lunr](https://img.shields.io/badge/lunr-2.x-blue)
+![mathjax](https://img.shields.io/badge/mathjax-3.x-blue)
+![GHpages](https://img.shields.io/badge/gh--pages-ready-succes)
+![google-analytics](https://img.shields.io/badge/google--analytics-ready-succes)
+![disqus](https://img.shields.io/badge/disqus-ready-succes) ![social
+sharing](https://img.shields.io/badge/social--sharing-ready-succes)
+![seo](https://img.shields.io/badge/seo-ready-succes)
+![video](https://img.shields.io/badge/video--support-ok-succes)
+[![ko-fi](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://ko-fi.com/dieghernan)
 
-### Note: if you are using this repo and now get a notification about a security vulnerability, delete the Gemfile.lock file. 
+# [Chulapa](https://dieghernan.github.io/chulapa/)
 
-# Instructions
+### A full flexible Jekyll theme for Github Pages
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+## Notable features
 
-See more info at https://academicpages.github.io/
+-   **Bootstrap 4** - Fully responsive
+-   **Fontawesome 6** - v5 also supported. v4 is supported via shims but would
+    be deprecated at some point
+-   **3 different navbar styles**
+-   **Atom and RSS 2.0** feed
+-   **Internal search** by Algolia, Lunr or Google Custom Search
+-   **Comments** by Disqus and Giscus
+-   **Masonry gallery**
+-   **Video support** - self-hosted or from core providers: Youtube, Vimeo,
+    DailyMotion...
+-   **Structured data** for better SEO
+-   **Code highlight** - +20 Pygment styles
+-   **Mathjax** inside
+-   **Google Analytics**
+-   **Twitter/X Cards** and **Open Graph** data valid for Facebook, LinkedIn and
+    WhatsApp
+-   **14+ preinstalled skins**
+-   **Powerful look-and-feel customization** with a dedicated sandbox
+-   **Archive, cloud tag and index special layouts**
+-   **Do you like breadcrumbs?** We have it.
+-   **Multiple authors** with location, picture and social links. Travel blogs
+    and colaborative sites welcome!
 
-## To run locally (not on GitHub Pages, to serve on your own computer)
+A great alternative for blogs, news, portfolios and personal sites. Want to know
+more? [Go to Docs](https://dieghernan.github.io/chulapa/docs/01-install).
 
-1. Clone the repository and made updates as detailed above
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+## Installation
 
-# Changelog -- bugfixes and enhancements
+Sample `_config` file
+[here](https://github.com/dieghernan/chulapa/blob/master/_config.yml).
 
-There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
+There are three possible ways for installing Chulapa:
 
-To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+### A. Use our Github Template
+
+**Recommended if your are starting from scratch.**
+
+Create a Github account, click [this
+link](https://github.com/dieghernan/chulapa-101/generate) and quickstart your
+site!
+
+### B. Remote theme method
+
+**Recommended if you are migrating a previous site.**
+
+If you prefer not to use the template, you can use the `jekyll-remote-theme`
+method. Just follow these steps:
+
+1.  Create a new GitHub repository or go to an existing one
+
+2.  Add this line to your `_config.yml`:
+
+    ``` yaml
+
+    remote_theme: dieghernan/chulapa
+
+    ... more config options
+    ```
+
+3.  Remove other `remote_theme/theme` instances of your `_config.yml` file.
+
+### C. Gem-based method 💎
+
+With Gem-based themes, directories such as the `assets`, `_layouts`,
+`_includes`, and `_sass` are stored in the theme's gem, hidden from your
+immediate view. This allows for easier installation and updating as you don't
+have to manage any of the theme files.
+
+To install as a Gem-based theme:
+
+1.  Add the following to your `Gemfile`:
+
+    ``` ruby
+    gem "chulapa-jekyll"
+    ```
+
+2.  Fetch and update bundled gems by running the following
+    [Bundler](https://bundler.io/) command:
+
+    ``` bash
+    bundle
+    ```
+
+3.  Set the `theme` in your project's Jekyll `_config.yml` file:
+
+    ``` yaml
+    theme: chulapa-jekyll
+    ```
+
+To update the theme run `bundle update`.
+
+## Configuration and Layouts
+
+You have available an extensive documentation
+[here](https://dieghernan.github.io/chulapa/docs/01-install)
+
+## Performance
+
+[![Performance](https://raw.githubusercontent.com/dieghernan/chulapa/master/github-metrics.svg)](https://pagespeed.web.dev/report?url=https://dieghernan.github.io/chulapa/)
+
+## License
+
+[The MIT License](https://dieghernan.github.io/chulapa/license)
+
+## Attributions
+
+**Chulapa** is a font owned by the City Council of Madrid designed and produced
+by Joancarles Casasín y Pablo Gámez on a previous design of Silvia Fernández
+Palomar licensed under [Creative Commons CC BY, Versión
+4.0](https://creativecommons.org/licenses/by/4.0/). This theme incorporates a
+modification of this work in order to provide support to the english language.
+
+Bootstrap v.4.5 is released under the [MIT
+license](https://github.com/twbs/bootstrap/blob/v4.5.0/LICENSE) and is copyright
+2020 Twitter.
+
+Fontawesome 6.x is free, open source, and GPL friendly -
+[License](https://fontawesome.com/license/free) (Icons: CC BY 4.0, Fonts: SIL
+OFL 1.1, Code: MIT License).
+
+This theme incorporates some pieces of code from [Minimal
+Mistakes](https://mmistakes.github.io/minimal-mistakes/), Copyright (c)
+2013-2020 [Michael Rose](https://mademistakes.com/) and contributors distributed
+under the terms of the [MIT
+license](https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE).
+
+This theme incorporates [Pygments CSS
+Themes](http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html),
+developed by [jwarby](https://github.com/jwarby/) distributed under the terms of
+[The
+Unlicense](https://github.com/jwarby/jekyll-pygments-themes/blob/master/UNLICENSE.txt).
+
+This theme incorporates [Ferpal
+Sans](https://www.silviaferpal.com/portfolio-1/ferpalsans) developed by Silvia
+Ferpal and it's free for personal use.
+
+This theme incorporates [Jekyll Pure Liquid Table of
+Contents](https://github.com/allejo/jekyll-toc), Copyright © 2017 [Vladimir
+"allejo" Jimenez](https://github.com/allejo) distributed under the terms of the
+[MIT license](https://github.com/allejo/jekyll-toc/blob/master/LICENSE.MIT.md).
+
+This theme incorporates [Compress HTML in Jekyll](http://jch.penibelst.de/),
+Copyright (c) 2014 [Anatol Broder](https://github.com/penibelst) distributed
+under the terms of the [MIT
+license](https://github.com/penibelst/jekyll-compress-html/blob/master/LICENSE).
+
+This theme incorporates [Lunr](http://lunrjs.com), Copyright (c) 2013 Oliver
+Nightingale. Lunr is distributed under the terms of the [MIT
+License](https://github.com/olivernn/lunr.js/blob/master/LICENSE).
+
+This theme uses graphic resources from
+[Unplash](https://unsplash.com/@dieghernan/collections).
+
+This theme uses graphic resources from
+[Pexels](https://www.pexels.com/@dieghernan-3081919/collections/).
+
+This theme uses graphic resources from [Lorem Picsum](https://picsum.photos/).
